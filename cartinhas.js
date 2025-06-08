@@ -33,24 +33,45 @@ dias.forEach((dia, index) => {
   dia.addEventListener('click', () => {
     const conteudo = conteudos[index];
     if (conteudo) {
-      // Atualiza conteúdo da cartinha aberta
+      // Monta o card flip na div cartinhaAberta
       cartinhaAberta.innerHTML = `
-        <img src="${conteudo.imagem}" alt="Foto do dia ${index + 1}">
-        <p>${conteudo.texto}</p>
+        <div class="carta" tabindex="0">
+          <div class="frente">
+            <img src="${conteudo.imagem}" alt="Foto do dia ${index + 1}">
+          </div>
+          <div class="verso">
+            <p>${conteudo.texto}</p>
+            <button class="seta-virar" aria-label="Virar carta">&#x21bb;</button>
+          </div>
+        </div>
       `;
-      
+
       // Remove destaque de todas as fotos da galeria
       fotosGaleria.forEach(foto => foto.classList.remove('selecionada'));
-      
+
       // Destaca a foto correspondente na galeria (busca pela src)
       fotosGaleria.forEach(foto => {
         if (foto.src.includes(conteudo.imagem)) {
           foto.classList.add('selecionada');
-          // Opcional: scroll para a foto destacada
           foto.scrollIntoView({ behavior: 'smooth', inline: 'center' });
         }
       });
-      
+
+      // Evento para virar o card
+      const carta = cartinhaAberta.querySelector('.carta');
+      const btnVirar = cartinhaAberta.querySelector('.seta-virar');
+
+      btnVirar.addEventListener('click', (e) => {
+        e.stopPropagation();
+        carta.classList.toggle('flipped');
+      });
+
+      // Também vira o card ao clicar na carta (opcional)
+      carta.addEventListener('click', () => {
+        carta.classList.toggle('flipped');
+      });
+
+      // Rola para o card aberto
       cartinhaAberta.scrollIntoView({ behavior: 'smooth' });
     }
   });
