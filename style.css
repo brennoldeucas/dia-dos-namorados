@@ -26,7 +26,7 @@ body {
     gap: 15px;
     overflow-x: auto;
     padding: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     width: 90%;
     max-width: 900px;
     border-radius: 15px;
@@ -60,7 +60,7 @@ body {
     cursor: pointer;
     box-shadow: 0 6px 10px rgba(245, 39, 84, 0.6);
     transition: background 0.3s ease;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   .music-button:hover {
@@ -291,8 +291,9 @@ body {
   }
 
   .dias {
-    width: 40px;   /* reduz o tamanho */
-    height: 40px;
-    margin: 4px;
+    width: 30px;   /* reduz o tamanho */
+    height: 30px;
+    margin: 8px;
+    padding: 7px;
   }
 }
