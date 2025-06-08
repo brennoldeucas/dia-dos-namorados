@@ -1,7 +1,7 @@
 const dias = document.querySelectorAll('.dias');
 const cartinhaAberta = document.getElementById('cartinhaAberta');
+const fotosGaleria = document.querySelectorAll('.photo-gallery img');
 
-// Dados das cartinhas (1 para cada .dias)
 const conteudos = [
   {
     imagem: 'imagens/IMG-20250417-WA0008.jpg',
@@ -29,17 +29,28 @@ const conteudos = [
   }
 ];
 
-// Para cada cartinha, associar o clique e mostrar o conteúdo
 dias.forEach((dia, index) => {
   dia.addEventListener('click', () => {
     const conteudo = conteudos[index];
-
     if (conteudo) {
+      // Atualiza conteúdo da cartinha aberta
       cartinhaAberta.innerHTML = `
         <img src="${conteudo.imagem}" alt="Foto do dia ${index + 1}">
         <p>${conteudo.texto}</p>
       `;
-      cartinhaAberta.style.display = 'block';
+      
+      // Remove destaque de todas as fotos da galeria
+      fotosGaleria.forEach(foto => foto.classList.remove('selecionada'));
+      
+      // Destaca a foto correspondente na galeria (busca pela src)
+      fotosGaleria.forEach(foto => {
+        if (foto.src.includes(conteudo.imagem)) {
+          foto.classList.add('selecionada');
+          // Opcional: scroll para a foto destacada
+          foto.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+        }
+      });
+      
       cartinhaAberta.scrollIntoView({ behavior: 'smooth' });
     }
   });
