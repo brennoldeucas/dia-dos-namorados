@@ -218,8 +218,8 @@ body {
   background: rgba(255, 255, 255, 0.2);
   padding: 20px 25px;
   border-radius: 20px;
-  width: 60%;
-  min-height: 100px;
+  width: 30%;
+  height: 600px;
   font-size: 1.3rem;
   line-height: 1.6;
   box-shadow: 0 4px 12px rgba(255, 71, 111, 0.5);
@@ -237,7 +237,8 @@ body {
   border: 2px solid #ff6584;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(255, 101, 132, 0.3);
-  width: 90%;                     /* Limite opcional, pode ajustar */
+  width: 90%;  
+  height: 90%;                   /* Limite opcional, pode ajustar */
   box-sizing: border-box; 
 }
 
@@ -339,7 +340,25 @@ body {
   transition: all 0.6s ease;
 }
 
+.memoria{
+  background: #ff476f;
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 6px 10px rgba(245, 39, 84, 0.6);
+  transition: background 0.3s ease;
+  margin-bottom: 10px;
+} 
 
+.memoria:hover{
+  background-color: #ff1a48;
+  transition: all 0.4s;
+  
+}
 
 
 @keyframes fadeIn {
@@ -383,5 +402,7 @@ body {
 
   .text-area{
     width: 70%;
+    height: 500px;
   }
+  
 }
