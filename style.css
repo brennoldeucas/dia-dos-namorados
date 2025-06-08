@@ -58,21 +58,20 @@ body {
     font-weight: 600;
     color: white;
     cursor: pointer;
-    box-shadow: 0 6px 10px rgba(255, 71, 111, 0.6);
+    box-shadow: 0 6px 10px rgba(245, 39, 84, 0.6);
     transition: background 0.3s ease;
     margin-bottom: 30px;
   }
 
   .music-button:hover {
-    background: #ff2c56;
+    background: #ff1a48;
   }
 
   .music-message{
-    background-color: #ff3a61;
+    background-color: #ff1a48;
     border-radius: 10px;
     width: 80%;
     margin: 0 auto;
-
   }
 
   /* Espaço para textos graduais conforme datas */
@@ -112,6 +111,12 @@ body {
   }
   .dias:hover{
     background-color: rgba(255, 0, 0, 0.498);
+  }
+
+  .texto{
+    margin-top: 10px;
+    background-color: white;
+    color: black;
   }
 
 .hearts-container {
@@ -220,11 +225,30 @@ body {
 .music-message {
   color: #fff;
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
-.datas{
+.carta-aberta{
+  .cartinha-aberta {
+  display: none; /* começa invisível */
+  max-width: 90%;
+  width: 500px;
+  margin: 20px auto;
+  padding: 15px;
+  border: 2px solid #ff6584;
+  border-radius: 15px;
+  background-color: #fff0f4;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  
+}
 
+.carta-aberta img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
 }
 
 @keyframes fadeIn {
@@ -252,4 +276,13 @@ body {
     .music-player{
       width: 60%;
     }
+    .datas {
+    justify-content: center; /* centraliza os itens no contêiner */
+  }
+
+  .dias {
+    width: 40px;   /* reduz o tamanho */
+    height: 40px;
+    margin: 4px;
+  }
 }
