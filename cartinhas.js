@@ -72,7 +72,16 @@ dias.forEach((dia, index) => {
       });
 
       // Rola para o card aberto
-      cartinhaAberta.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        const rect = cartinhaAberta.getBoundingClientRect();
+        const padding = 20;
+        const foraDoViewport = rect.top < padding || rect.bottom > window.innerHeight;
+
+        if (foraDoViewport) {
+          cartinhaAberta.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+
     }
   });
 });

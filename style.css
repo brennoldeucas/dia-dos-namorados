@@ -33,10 +33,7 @@ body {
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 4px 10px rgba(139, 0, 0, 0.3);
-
-    -webkit-overflow-scrolling: touch; /* rolagem suave no iOS */
-    touch-action: pan-x; /* ⬅️ IMPEDE bloqueio do scroll vertical */
-    overscroll-behavior: contain;
+    
   }
 
   .photo-gallery img {
