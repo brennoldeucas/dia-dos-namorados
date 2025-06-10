@@ -53,24 +53,7 @@ dias.forEach((dia, index) => {
       fotosGaleria.forEach(foto => {
         if (foto.src.includes(conteudo.imagem)) {
           foto.classList.add('selecionada');
-        if (foto.src.includes(conteudo.imagem)) {
-          foto.classList.add('selecionada');
-
-          const galeria = foto.parentElement;
-          const galeriaScrollLeft = galeria.scrollLeft;
-          const galeriaWidth = galeria.clientWidth;
-
-          const fotoOffsetLeft = foto.offsetLeft;
-          const fotoWidth = foto.offsetWidth;
-
-          const foraDaTela = fotoOffsetLeft < galeriaScrollLeft ||
-                              (fotoOffsetLeft + fotoWidth) > (galeriaScrollLeft + galeriaWidth);
-
-          if (foraDaTela) {
-            foto.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-          }
-          }
-
+          foto.scrollIntoView({ behavior: 'smooth', inline: 'center' , block: 'center'});
         }
       });
 

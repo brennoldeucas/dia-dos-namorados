@@ -32,6 +32,8 @@ body {
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 4px 10px rgba(139, 0, 0, 0.3);
+    scroll-snap-type: x mandatory;
+
   }
 
   .photo-gallery img {
@@ -42,7 +44,9 @@ body {
     cursor: pointer;
     transition: transform 0.3s ease;
     box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    scroll-snap-align: center;
   }
+  
 
   .photo-gallery img:hover {
     transform: scale(1.1);
