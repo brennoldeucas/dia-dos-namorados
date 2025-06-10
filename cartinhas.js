@@ -53,7 +53,7 @@ dias.forEach((dia, index) => {
       fotosGaleria.forEach(foto => {
         if (foto.src.includes(conteudo.imagem)) {
           foto.classList.add('selecionada');
-          foto.scrollIntoView({ behavior: 'smooth', inline: 'center' , block: 'center'});
+        
         }
       });
 
@@ -72,16 +72,7 @@ dias.forEach((dia, index) => {
       });
 
       // Rola para o card aberto
-      setTimeout(() => {
-        const rect = cartinhaAberta.getBoundingClientRect();
-        const padding = 20;
-        const foraDoViewport = rect.top < padding || rect.bottom > window.innerHeight;
-
-        if (foraDoViewport) {
-          cartinhaAberta.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 300);
-
+      cartinhaAberta.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
