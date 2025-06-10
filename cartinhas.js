@@ -53,7 +53,7 @@ dias.forEach((dia, index) => {
       fotosGaleria.forEach(foto => {
         if (foto.src.includes(conteudo.imagem)) {
           foto.classList.add('selecionada');
-          foto.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+          foto.scrollIntoView({ behavior: 'smooth', inline: 'center' , block: 'center'});
         }
       });
 
@@ -72,12 +72,7 @@ dias.forEach((dia, index) => {
       });
 
       // Rola para o card aberto
-      const rect = cartinhaAberta.getBoundingClientRect();
-const alreadyVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
-
-if (!alreadyVisible) {
-  cartinhaAberta.scrollIntoView({ behavior: 'smooth' });
-}
+      cartinhaAberta.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
