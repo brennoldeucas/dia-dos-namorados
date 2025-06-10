@@ -49,20 +49,11 @@ dias.forEach((dia, index) => {
       // Remove destaque de todas as fotos da galeria
       fotosGaleria.forEach(foto => foto.classList.remove('selecionada'));
 
-      // ✅ NOVO CÓDIGO: Destaca a imagem e faz scroll manual SUAVE sem interferir no vertical
+      // Destaca a foto correspondente na galeria (busca pela src)
       fotosGaleria.forEach(foto => {
         if (foto.src.includes(conteudo.imagem)) {
           foto.classList.add('selecionada');
-
-          const galeria = foto.parentElement;
-
-          const fotoCenter = foto.offsetLeft + foto.offsetWidth / 2;
-          const scrollTarget = fotoCenter - galeria.offsetWidth / 2;
-
-          galeria.scrollTo({
-            left: scrollTarget,
-            behavior: 'smooth'
-          });
+          foto.scrollIntoView({ behavior: 'smooth', inline: 'center' , block: 'center'});
         }
       });
 
@@ -80,14 +71,8 @@ dias.forEach((dia, index) => {
         carta.classList.toggle('flipped');
       });
 
-      // ✅ NOVO CÓDIGO: Só faz scroll se a carta não estiver visível (evita pulo)
-      const rect = cartinhaAberta.getBoundingClientRect();
-      const padding = 20;
-      const foraDoViewport = rect.top < padding || rect.bottom > window.innerHeight;
-
-      if (foraDoViewport) {
-        cartinhaAberta.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      // Rola para o card aberto
+      cartinhaAberta.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
