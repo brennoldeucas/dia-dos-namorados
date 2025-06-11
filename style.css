@@ -221,7 +221,7 @@ body {
   padding: 20px 25px;
   border-radius: 20px;
   width: 50%;
-  height: 800px;
+  height: 900px;
   font-size: 1.3rem;
   line-height: 1.6;
   box-shadow: 0 4px 12px rgba(255, 71, 111, 0.5);
@@ -239,9 +239,9 @@ body {
   border: 2px solid #ff6584;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(255, 101, 132, 0.3);
-  width: 90%;                     /* Limite opcional, pode ajustar */
+  width: 100%;                     /* Limite opcional, pode ajustar */
   box-sizing: border-box; 
-  height: 600px;
+  height: auto;
   overflow: auto;
 }
 
