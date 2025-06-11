@@ -241,7 +241,7 @@ body {
   box-shadow: 0 4px 8px rgba(255, 101, 132, 0.3);
   width: 100%;                     /* Limite opcional, pode ajustar */
   box-sizing: border-box; 
-  height: auto;
+  height: 600px;
   overflow: auto;
 }
 
@@ -253,7 +253,7 @@ body {
   
 }
 .cartinha-aberta p {
-  font-size: 12px;
+  font-size: 13px;
   color: #b2224a;
   text-align: center;
 }
