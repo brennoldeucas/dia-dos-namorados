@@ -53,7 +53,7 @@ dias.forEach((dia, index) => {
       fotosGaleria.forEach(foto => {
         if (foto.src.includes(conteudo.imagem)) {
           foto.classList.add('selecionada');
-          
+          foto.scrollIntoView({ behavior: 'smooth', inline: 'center' , block: 'center'});
         }
       });
 
