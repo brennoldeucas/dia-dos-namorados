@@ -72,7 +72,7 @@ dias.forEach((dia, index) => {
       });
 
       // Rola para o card aberto
-      
+      cartinhaAberta.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
