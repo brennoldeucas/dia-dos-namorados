@@ -46,7 +46,6 @@ function smoothScrollTo(element, duration = 800) {
     if (timeElapsed < duration) requestAnimationFrame(animation);
   }
 
-  // Função de easing para suavizar a animação
   function ease(t, b, c, d) {
     t /= d / 2;
     if (t < 1) return c / 2 * t * t + b;
@@ -61,8 +60,9 @@ dias.forEach((dia, index) => {
   dia.addEventListener('click', () => {
     const conteudo = conteudos[index];
     if (conteudo) {
+      // Removi tabindex do carta
       cartinhaAberta.innerHTML = `
-        <div class="carta" tabindex="0">
+        <div class="carta">
           <div class="frente">
             <img src="${conteudo.imagem}" alt="Foto do dia ${index + 1}">
           </div>
@@ -81,7 +81,6 @@ dias.forEach((dia, index) => {
         }
       });
 
-      // Scroll suave só após clicar no dia
       setTimeout(() => {
         smoothScrollTo(cartinhaAberta, 1000);
       }, 100);
@@ -90,11 +89,10 @@ dias.forEach((dia, index) => {
       const btnVirar = cartinhaAberta.querySelector('.seta-virar');
 
       btnVirar.addEventListener('click', (e) => {
-        e.stopPropagation();
+        e.preventDefault();
         carta.classList.toggle('flipped');
       });
 
-      // REMOVIDO o scroll ao virar a carta para evitar conflito
       carta.addEventListener('click', () => {
         carta.classList.toggle('flipped');
       });
